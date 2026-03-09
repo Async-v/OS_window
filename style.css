@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-family: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+main .desktop {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: url("https://wallpapercave.com/wp/wp9378812.webp") no-repeat center/cover;
+}
+main .desktop .window {
+  position: absolute;
+}
+main .desktop .notes {
+  width: 40%;
+  height: 50%;
+  background-color: lightseagreen;
+}
+main .desktop .notes .drag-bar {
+  width: 100%;
+  height: 1.5vw;
+  background-color: rgba(29, 28, 28, 0.571);
+}
+main .desktop .notes .content {
+  width: 100%;
+  height: calc(100% - 1.5vw);
+}
+main .desktop .taskbar {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 3.5vw;
+  background-color: rgba(62, 62, 62, 0.5137254902);
+  z-index: 10;
+}
+main .desktop .taskbar .taskbar-apps-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+main .desktop .taskbar .taskbar-apps-center .app-icon-container {
+  width: 3vw;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+main .desktop .taskbar .taskbar-apps-center .app-icon-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+main .desktop .taskbar .taskbar-apps-center .app-icon-container:nth-child(5) {
+  background-color: rgba(29, 28, 28, 0.571);
+}
+main .desktop .taskbar .taskbar-right-date-notifications {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .contain {
+  cursor: default;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 3vw;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .lang {
+  padding: 0 10px;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .lang h5 {
+  font-size: small;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 300;
+  color: white;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .status {
+  padding: 0 10px;
+  gap: 10px;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .status i {
+  font-weight: 100;
+  color: white;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .time-notifications {
+  padding: 0 10px;
+}
+main .desktop .taskbar .taskbar-right-date-notifications .time-notifications h5 {
+  font-size: small;
+  letter-spacing: 0.8px;
+  text-align: right;
+  font-weight: 300;
+  color: white;
+  line-height: 14px;
+  text-transform: uppercase;
+}
