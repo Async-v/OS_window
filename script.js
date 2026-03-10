@@ -1,12 +1,14 @@
-function appsDragFeature(win) {
-    const float = document.querySelector(".window");
-    const desktop = document.querySelector(".desktop");
+let currentZ = 1;
 
+function appsDragFeature(win, drag) {
+    const desktop = document.querySelector(".desktop");
+    
     let isDragging = false;
     let offsetX, offsetY;
-
-
-    win.addEventListener('mousedown', function (dets) {
+    
+    drag.addEventListener('mousedown', function (dets) {
+        win.style.zIndex = currentZ;
+        currentZ += 1
         isDragging = true;
         offsetX = dets.clientX - win.offsetLeft
         offsetY = dets.clientY - win.offsetTop
@@ -20,10 +22,10 @@ function appsDragFeature(win) {
         }
     })
 
-    win.addEventListener("mouseup", function () {
+    desktop.addEventListener("mouseup", function () {
         isDragging = false;
     });
-
+    
 }
 
 const taskbar = document.querySelector(".desktop .taskbar");
@@ -42,7 +44,7 @@ function createWindow(){
     window.appendChild(dragbar);
     window.appendChild(content);
 
-    appsDragFeature(window)
+    appsDragFeature(window, dragbar)
     return window;
 
 }
@@ -50,8 +52,8 @@ function createWindow(){
 
 taskbar.addEventListener('click', function(dets){
     if(dets.target.tagName === "IMG"){
-
         desktop.appendChild(createWindow());
+
     }
 })
 

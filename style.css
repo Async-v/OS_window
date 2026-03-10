@@ -26,6 +26,7 @@ main .desktop {
 }
 main .desktop .window {
   position: absolute;
+  z-index: 1;
 }
 main .desktop .notes {
   width: 40%;
